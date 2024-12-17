@@ -5,4 +5,6 @@ from Primera import views
 urlpatterns = [
     path('', views.Inicio, name='Inicio'),
     path('Discos/', views.Discos, name='Discos'),
+    path('Contacto/', views.Contacto, name='Contacto'),
+    
 ]

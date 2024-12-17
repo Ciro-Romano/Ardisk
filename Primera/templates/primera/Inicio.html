@@ -5,9 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Ardisk</title>
-
-    <!-- Cargar los archivos estáticos -->
+    <title> Ardisk </title>
     {% load static %}
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
 </head>
@@ -22,9 +20,12 @@
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item"><a class="nav-link" href="{% url 'Inicio' %}">Inicio</a></li>
                 <li class="nav-item"><a class="nav-link" href="{% url 'Discos' %}">Discos</a></li>
+                <li class="nav-item"><a class="nav-link" href="{% url 'Contacto' %}">Contacto</a></li>
             </ul>
         </nav>
     </header>
+
+    {% block '' %}
 
     <!-- Hero Section -->
     <section class="hero">
@@ -32,87 +33,12 @@
         <p>Explora lo mejor de la música en vinilo, desde los clásicos hasta lo más nuevo. ¡Escucha, disfruta y rompe las reglas!</p>
     </section>
 
-    <!-- Catálogo de vinilos -->
-    <section id="catalogo" class="catalogo">
-        <h2>Catálogo de Vinilos</h2>
-        <div class="vinilo-container">
-            <!-- Vinilo 1 -->
-            <div class="vinilo-card">
-                <img src="{% static 'images/vinilo1.jpg' %}" alt="Vinilo Punk 1">
-                <h3>Destruction Punk</h3>
-                <p class="descripcion">Un álbum clásico del punk, ideal para los que buscan energía cruda.</p>
-                <p class="precio">$30 USD</p>
-            </div>
-
-            <!-- Vinilo 2 -->
-            <div class="vinilo-card">
-                <img src="{% static 'images/vinilo2.jpg' %}" alt="Vinilo Metal 1">
-                <h3>Shredded Metal</h3>
-                <p class="descripcion">El metal más puro con guitarras afiladas y una batería imparable.</p>
-                <p class="precio">$35 USD</p>
-            </div>
-
-            <!-- Vinilo 3 -->
-            <div class="vinilo-card">
-                <img src="{% static 'images/vinilo3.jpg' %}" alt="Vinilo Punk 2">
-                <h3>Rebellion Anthem</h3>
-                <p class="descripcion">El himno de la rebelión punk, con letras poderosas que no puedes ignorar.</p>
-                <p class="precio">$25 USD</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Biografía del artista -->
-    <section id="biografia" class="biografia">
-        <h2>Biografía del Artista</h2>
-        <div class="biografia-contenido">
-            <img src="{% static 'images/artista.jpg' %}" alt="Artista Punk" class="biografia-img">
-            <div class="texto">
-                <h3>El Luchador de las Sombras</h3>
-                <p>Con su estilo único, <strong>El Luchador de las Sombras</strong> revolucionó la escena musical con un sonido crudo, punk, lleno de distorsión y energía. Ha sido la voz de generaciones que no temen romper las reglas. Desde su debut en 1995, el artista ha sido una figura clave en la transición del punk a los sonidos más pesados del metal.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Reseñas -->
-    <section class="reseñas">
-        <h2>Reseñas</h2>
-        <div class="reseñas-container">
-            <div class="reseña-card">
-                <h3>Vinilo Punk "Destruction"</h3>
-                <p>Una explosión de energía, agresividad y actitud. Este disco marca el regreso del punk a sus raíces más puras.</p>
-                <p>- <em>Rock Hard Magazine</em></p>
-            </div>
-
-            <div class="reseña-card">
-                <h3>Vinilo Metal "Shredded"</h3>
-                <p>El álbum más brutal de la banda. Un viaje de riffs imponentes y una voz desgarradora.</p>
-                <p>- <em>Metal Forge</em></p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contacto -->
-    <section id="contacto" class="contacto">
-        <h2>Contacto</h2>
-        <p>¿Tienes alguna pregunta o deseas hacer un pedido especial? Contáctanos:</p>
-        <form action="#" method="post">
-            <input type="text" name="nombre" placeholder="Tu nombre" required>
-            <input type="email" name="email" placeholder="Tu correo electrónico" required>
-            <textarea name="mensaje" placeholder="Tu mensaje" required></textarea>
-            <button type="submit">Enviar</button>
-        </form>
-    </section>
+    {% endblock %}
 
     <!-- Pie de página -->
     <footer>
         <p>&copy; 2024 Vinilos Rebelde | Todos los derechos reservados.</p>
     </footer>
 </body>
-
-{% block '' %}
-<p>inicio</p>
-{% endblock %}
-
 </html>
 

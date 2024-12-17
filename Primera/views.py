@@ -5,3 +5,6 @@ def Inicio(request):
 
 def Discos(request):
     return render(request, 'Primera/Discos.html')
+
+def Contacto(request):
+    return render(request, 'Primera/Contacto.html')
