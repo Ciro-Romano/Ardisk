@@ -121,7 +121,7 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 STATICFILES_DIRS = [
-    BASE_DIR / "static",
+    'C:/Users/roman/Desktop/Ardisk/static',
 ]
 
 # Default primary key field type
