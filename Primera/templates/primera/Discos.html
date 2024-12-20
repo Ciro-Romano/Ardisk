@@ -1,5 +1,35 @@
 {% extends 'Primera/Inicio.html' %} {% load static %}
 
+{% block title %} Discos {% endblock %}
+
 {% block '' %}
-<p>in progress...</p>
+
+<div class="navbar-container"></div>
+<ul class="navbar-nav mr-auto">
+    <li class="nav-item">
+        <a class="nav-link" href="{% url 'Lista-Disco' %}">Lista</a>
+    </li>
+</ul>
+</div>
+
+<div class="discos-container">
+    {% for disco in discos %}
+    <div class="disco">
+        {% if disco.Imagen %}
+        <img src="{{ disco.Imagen.url }}" alt="Portada de {{ disco.titulo }}" class="disco-imagen">
+        {% else %}
+        <p>No hay imagen disponible</p>
+        {% endif %}
+        <h3>{{ disco.titulo }}</h3>
+        <p><b>Artista:</b> {{ disco.Artista }}</p>
+        <p><b>Descripción:</b> {{ disco.Descripcion }}</p>
+        <p><b>Estudio:</b> {{ disco.Estudio|default:"Sin Información" }}</p>
+        <p><b>Discográfica:</b> {{ disco.Discografica|default:"Sin Información" }}</p>
+        <p><b>Género:</b> {{ disco.Genero.Nombre }}</p>
+    </div>
+    {% empty %}
+    <p>No hay discos disponibles.</p>
+    {% endfor %}
+</div>
+
 {% endblock %}
